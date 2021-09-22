@@ -37,7 +37,19 @@ def get_workers_from_csv(csv_text: str):
 	return [workers, dates]
 
 
+def write_workers_in_csv(workers, dates, file):
+	temp_string_dates = ",".join([str(i) for i in dates])
+	file.write("Name / Date," + temp_string_dates +'\n')
+	for worker in workers:
+		temp_string_hours = ",".join([str(i) for i in worker.hours])
+		file.write(worker.name + "," + temp_string_hours + '\n')
+
+
 text_from_file = open("./acme_worksheet.csv", 'r', encoding="utf-8").readlines()
 workers = get_workers_from_csv(text_from_file)
 workers[0].sort(key=lambda x: x.name)
 
+
+drop_file = open("./workers.csv", 'w', encoding="utf-8")
+write_workers_in_csv(workers[0], workers[1], drop_file)
+drop_file.close()
