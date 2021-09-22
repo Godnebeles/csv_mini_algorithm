@@ -1,0 +1,9 @@
+For to use this script you need:
+
+1) In main.py on On line 48 you need to specify the name of your file, 
+which will be in the same directory as the script 'main.py'. Or just rename 
+you file to 'acme_worksheet.csv' and put him in the same directory as the script 'main.py'.
+
+2) you need to have python 3 installed and run script in the console 
+or 
+Just run 'main.exe', rename the file your '.csv' to'acme_worksheet.csv' first.  
