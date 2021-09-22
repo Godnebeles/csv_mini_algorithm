@@ -42,6 +42,11 @@ def write_workers_in_csv(workers, dates, file):
 	file.write("Name / Date," + temp_string_dates +'\n')
 	for worker in workers:
 		temp_string_hours = ",".join([str(i) for i in worker.hours])
+		if len(dates) > len(worker.hours):
+			i = len(worker.hours)
+			while i < len(dates):				
+				temp_string_hours += ",0"
+				i+=1
 		file.write(worker.name + "," + temp_string_hours + '\n')
 
 
